@@ -1,0 +1,24 @@
+ <div class="well sidebar-nav" style="opacity:0.8">
+<h1><%=@article.title%></h1>
+<p align="center"><%= image_tag @article.image.url %></p>
+<p><%=@article.body%></p>
+ </div>
+<br>
+
+<div class="btn btn-default"><%= link_to "edit", edit_article_path(@article) %></div>
+<div class="btn btn-default"><%= link_to "delete",article_path(@article), method: :delete,data: {confirm: "Really delete the article?"} %></div>
+<div class="btn btn-default"><%= link_to "<< Back to Articles List", articles_path %></div>
+<hr>
+<h3 style="color:white">Comments (<%= @article.comments.size %>)</h3>
+<div class="col-lg-8" style="opacity:0.8">
+<div class="well sidebar-nav">
+<%= render partial: 'articles/comment', collection: @article.comments %><hr>
+</div>
+</div>
+<div class="col-lg-4" style="opacity:0.8">
+          <div class="well sidebar-nav">
+            <%= render partial: 'comments/form' %>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+

@@ -1,0 +1,16 @@
+<h1>All Articles</h1>
+<ul id="articles">
+<% @article.each do |a| %>
+<div class="well sidebar-nav">
+	<l1><%= link_to a.title,article_path(a)%></l1><br>
+	</div>
+	<%end%>
+	
+	<hr>
+<div class="btn btn-default"><%= link_to "New article", new_article_path%></div>
+	</ul>
+	<style>
+  
+  h1   {color:white}
+  p    {color:white}
+</style>
