@@ -2,7 +2,8 @@
 <ul id="articles">
 <% @article.each do |a| %>
 <div class="well sidebar-nav">
-	<l1><%= link_to a.title,article_path(a)%></l1><br>
+	<h3><strong><l1><%=a.title%></l1><br></strong></h3>
+	<l1><%=h truncate(a.body, :length=>500)%><%= link_to "See More",article_path(a)%></l1>
 	</div>
 	<%end%>
 	
